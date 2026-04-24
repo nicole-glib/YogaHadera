@@ -1,0 +1,155 @@
+@import "/src/scss/colors.scss";
+
+.header{
+    position: fixed;
+    z-index: 100;
+    top:0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $primery-color;
+    color:$light-text-color;
+    nav{
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(max-content,1fr);
+    }
+    a{
+        padding: 1rem;
+        font-size: 1.8rem;
+        color:$secondery-text-color;
+        transition: all .5s;
+        text-align: center;
+        
+        &:hover{
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+
+        }
+    }
+}
+
+.about-me{
+    margin-top: 10rem;
+    display: flex;
+    padding: 3rem;
+
+    figure{
+        width: 30rem;
+        height: 30rem;
+        float: left;
+        position: relative;
+        overflow: hidden;
+        border-radius: 50%;
+        margin: 0 2rem  2rem 0;
+        
+        // 
+        @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+            -webkit-clip-path: circle(50% at 50% 50%);
+            clip-path: circle(50% at 50% 50%);
+            -webkit-shape-outside: circle(50% at 50% 50%);
+            shape-outside: circle(50% at 50% 50%);
+            border-radius: none;
+        }
+
+        @media only screen and (max-width: 46.25em) {
+            width: 15rem;
+        height: 15rem;
+        }
+    }
+ 
+      .img{
+        background-image: url(../assets/img/profile.jpg);
+        height: 100%;
+        background-size: cover;
+        border-radius: 50%;
+        
+        filter: grayscale(0%) brightness(100%) ;
+        // -webkit-filter: blur(5px);
+        // box-shadow: 0 0 8px 8px white inset;
+        box-shadow: 0 0 15px 10px white inset;
+    }
+}
+
+.cards-container{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10rem;
+    padding: 10rem;
+    transition: all 2s ;
+    .card {
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 10px 25px;
+        transition: all .5s;
+        .image{
+            position: relative;
+            background-size: cover;
+            height: 30rem;
+            transition: all 2s ;
+            &__img{
+                width: 100%;
+                height: 100%;
+
+            }
+
+
+            &__overlay{
+                position: absolute;
+                top:0;
+                left:0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba($primery-color, .5);
+                
+            transition: all .5s ;
+
+       
+            }
+    
+        }
+        .information{
+margin: 2rem;
+        }
+        .location{
+            display: flex;
+            &__icon{
+
+            }
+            &__text{
+
+            }
+        }
+        .time{
+            display: grid;
+            grid-template-columns: min-content 1fr;
+            justify-items: start;
+            align-items: start;
+            gap: 1rem;
+            &__day{
+                
+            }
+        }
+
+        &:hover{
+            transform: scale(1.1);
+            .image__overlay{
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+footer{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: rgb(64, 64, 64);
+    color: $light-text-color;
+    min-height: 10rem;
+    align-items: center;
+    a{
+        color: inherit;
+    }
+    @media only screen and (max-width: 46.25em) {
+       flex-direction: column;
+      }
+}
