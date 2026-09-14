@@ -23,23 +23,25 @@ $content-width: 110rem;
 
     nav {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: nowrap;
+        justify-content: stretch;
         width: 100%;
     }
 
     a {
-        flex: 1 1 12rem;
+        flex: 1 1 0;
         min-width: 0;
-        padding: 1rem 1.2rem;
-        font-size: clamp(1.4rem, 2.6vw, 1.8rem);
+        padding: 1rem 0.8rem;
+        font-size: clamp(1.2rem, 2.8vw, 1.8rem);
+        line-height: 1.2;
         color: $secondery-text-color;
         transition: box-shadow 0.3s;
         text-align: center;
         text-decoration: none;
+        white-space: nowrap;
 
         @media only screen and (max-width: $bp-small) {
-            flex: 1 1 40%;
+            padding: 0.8rem 0.4rem;
         }
 
         @media (hover: hover) and (pointer: fine) {
@@ -61,7 +63,7 @@ $content-width: 110rem;
     padding-top: 14rem;
 
     @media only screen and (max-width: $bp-small) {
-        padding-top: 16rem;
+        padding-top: 12rem;
     }
 
     .text-container {
