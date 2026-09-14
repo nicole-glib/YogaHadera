@@ -1,4 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+@use "./scss/colors" as *;
+@use "@angular/material/prebuilt-themes/indigo-pink.css";
+
 *,
 *::after,
 *::before {
@@ -9,20 +12,35 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    scroll-padding-top: 14rem;
+    color-scheme: light;
 }
 
+@media only screen and (max-width: 640px) {
+    html {
+        scroll-padding-top: 16rem;
+    }
+}
 
-body{
+body {
   min-height: 100vh;
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
- // background-image: linear-gradient(to left bottom, var(--color-primary), var(--color-primary-light));
+  background-color: #fff;
+  color: $text-color;
   background-size: cover;
   background-repeat: no-repeat;
   box-sizing: border-box;
- }
+  overflow-wrap: break-word;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
 
 .btn{
     cursor: pointer;

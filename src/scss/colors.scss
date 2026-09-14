@@ -1,6 +1,6 @@
-$primery-color:#0042FF;
+@use "sass:color";
 
+$primery-color: #0042FF;
 $light-text-color: white;
-$text-color: darken($primery-color,20%);
-
-$secondery-text-color:rgb(193, 211, 253);
+$text-color: color.adjust($primery-color, $lightness: -20%);
+$secondery-text-color: rgb(193, 211, 253);
