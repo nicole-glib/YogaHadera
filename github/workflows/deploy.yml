@@ -3,7 +3,7 @@ name: Build and Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main # או master, לפי שם הענף הראשי שלך
+      - master # מותאם לענף שלך
 
 permissions:
   contents: write
@@ -32,4 +32,4 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist/YogaHadera/browser
+          publish_dir: ./dist/YogaHadera/browser # אם אין אצלך תיקיית browser בתוך dist/YogaHadera, מחקי את ה-browser/
